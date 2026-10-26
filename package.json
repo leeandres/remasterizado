@@ -1,6 +1,6 @@
 {
   "name": "masterai-pro",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "MasterAI Pro \u2014 AI-assisted audio mastering studio in the browser",
   "scripts": {
@@ -17,6 +17,7 @@
     "@breezystack/lamejs": "1.2.7",
     "@wasm-audio-decoders/flac": "0.2.11",
     "chart.js": "4.6.1",
+    "electron-updater": "^6.8.11",
     "idb": "8.0.4",
     "lucide-react": "1.61.0",
     "next": "16.4.3",
@@ -60,14 +61,19 @@
     },
     "win": {
       "target": [
-        "nsis",
-        "zip"
+        "portable"
       ]
     },
     "linux": {
       "target": [
         "AppImage"
       ]
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "leeandres",
+      "repo": "remasterizado"
     }
-  }
+  },
+  "author": "MasterAI Pro"
 }

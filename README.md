@@ -1,5 +1,14 @@
 # MasterAI Pro
 
+![MasterAI Pro banner](assets/banner.svg)
+
+[![Version](https://img.shields.io/badge/version-1.0.1-d8ff57?style=flat-square)](https://github.com/leeandres/remasterizado/releases)
+[![License](https://img.shields.io/badge/license-MIT-5eead4?style=flat-square)](LICENSE)
+[![Platform](https://img.shields.io/badge/platform-Web%20%7C%20Windows%20%7C%20macOS-a78bfa?style=flat-square)](https://github.com/leeandres/remasterizado/releases)
+[![Build](https://img.shields.io/badge/build-passing-1ed760?style=flat-square)](https://github.com/leeandres/remasterizado)
+
+**Versión actual: 1.0.1** — App de escritorio con auto-actualización disponible en [Releases](https://github.com/leeandres/remasterizado/releases).
+
 **MasterAI Pro** es un estudio de masterización de audio profesional que funciona **100% en el navegador**. Permite subir una mezcla, analizarla con estándares EBU R128, aplicar una cadena DSP completa (filtro, EQ paramétrico, compresor multibanda, saturación y limitador true-peak), comparar el original con el resultado masterizado en tiempo real y exportar el archivo final listo para streaming (Spotify, Apple Music, YouTube, SoundCloud).
 
 Todo el procesado, la medición y la codificación ocurren en el dispositivo del usuario: **ningún audio se sube a ningún servidor**.
@@ -26,6 +35,7 @@ Todo el procesado, la medición y la codificación ocurren en el dispositivo del
 - **Exportación**: WAV 24-bit/48 kHz o MP3 320 kbps CBR, normalización iterativa al objetivo de la plataforma, exportación de pista completa o región seleccionada.
 - **Historial local**: hasta 8 masters guardados en IndexedDB con ajustes y archivo final, descarga y restauración de configuración.
 - **Centro de ayuda integrado**: guía completa de cada función (botón `?` o tecla `?`).
+- **App de escritorio**: ejecutables para Windows y macOS con auto-actualización desde GitHub Releases.
 - **Atajos de teclado**: Espacio (play/pausa), B (A/B), L (loop), E (exportar), H (historial), ? (ayuda).
 - **UI responsive** (mobile-first) con tema oscuro de estudio.
 
@@ -63,6 +73,28 @@ npm run start
 5. Ajusta los módulos manualmente si es necesario.
 6. Pulsa **Analizar** para verificar LUFS y true peak.
 7. Exporta en WAV o MP3.
+
+---
+
+## App de escritorio (Windows y macOS)
+### Descarga directa (v1.0.1)
+
+| Plataforma | Archivo | Enlace |
+|---|---|---|
+| macOS | `MasterAI-Pro-1.0.1.dmg` | [Descargar DMG](https://github.com/leeandres/remasterizado/releases/download/v1.0.1/MasterAI-Pro-1.0.1.dmg) |
+| Windows | `MasterAI-Pro-1.0.1.exe` | [Descargar EXE](https://github.com/leeandres/remasterizado/releases/download/v1.0.1/MasterAI-Pro-1.0.1.exe) |
+
+> Si en la página de Releases no ves los archivos, haz clic en **"Assets"** para expandir la lista. El `.blockmap` es opcional (solo para auto-update diferencial).
+
+> **Nota sobre los archivos de release:** además del instalador (`.dmg`/`.exe`) verás un archivo `.blockmap`. Es un auxiliar de auto-actualización para descargas diferenciales (delta updates); **no necesitas descargarlo manualmente**, solo el `.dmg` o `.exe`.
+
+
+MasterAI Pro también está disponible como aplicación de escritorio con **auto-actualización**:
+
+- **macOS**: descarga el `.dmg` desde [GitHub Releases](https://github.com/leeandres/remasterizado/releases) e instálalo arrastrando a Aplicaciones.
+- **Windows**: descarga el `.exe` portable desde [GitHub Releases](https://github.com/leeandres/remasterizado/releases) y ejecútalo (no requiere instalación).
+
+La app comprueba automáticamente si hay una versión nueva al iniciar, la descarga en segundo plano y la instala al reiniciar, notificando al usuario en cada paso.
 
 ---
 

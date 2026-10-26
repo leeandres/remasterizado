@@ -2,12 +2,44 @@ const { app, BrowserWindow } = require("electron");
 const path = require("path");
 const http = require("http");
 const { spawn } = require("child_process");
+const { dialog } = require("electron");
+const { autoUpdater } = require("electron-updater");
 
 const PORT = 3000;
 const isDev = !app.isPackaged;
 
 let serverProcess = null;
 let mainWindow = null;
+
+autoUpdater.autoDownload = true;
+autoUpdater.autoInstallOnAppQuit = true;
+autoUpdater.on("update-available", (info) => {
+  if (mainWindow) {
+    dialog.showMessageBox(mainWindow, {
+      type: "info",
+      title: "Actualización disponible",
+      message: `Hay una nueva versión (${info.version}). Se descargará automáticamente.`,
+    });
+  }
+});
+autoUpdater.on("update-downloaded", (info) => {
+  if (mainWindow) {
+    dialog
+      .showMessageBox(mainWindow, {
+        type: "info",
+        title: "Actualización lista",
+        message: "La actualización se instalará al cerrar la app. ¿Reiniciar ahora?",
+        buttons: ["Reiniciar", "Más tarde"],
+        defaultId: 0,
+      })
+      .then(({ response }) => {
+        if (response === 0) autoUpdater.quitAndInstall();
+      });
+  }
+});
+autoUpdater.on("error", (err) => {
+  console.error("Auto-update error:", err);
+});
 
 function waitForServer(timeoutMs = 30000) {
   const start = Date.now();
@@ -79,6 +111,11 @@ app.whenReady().then(async () => {
   try {
     await startServer();
     createWindow();
+    try {
+      autoUpdater.checkForUpdatesAndNotify();
+    } catch (e) {
+      console.error("checkForUpdates failed:", e);
+    }
   } catch (error) {
     console.error(error);
     app.quit();

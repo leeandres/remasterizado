@@ -52,7 +52,7 @@ export function Header() {
               </span>
             </div>
             <div className="mt-1 hidden text-[8px] font-medium uppercase tracking-[0.22em] text-ink-200 sm:block">
-              AI Mastering Suite
+              AI Mastering Suite · v{process.env.NEXT_PUBLIC_APP_VERSION}
             </div>
           </div>
         </div>

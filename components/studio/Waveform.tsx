@@ -103,8 +103,10 @@ export function Waveform() {
       const current = previewEngine.getCurrentTime();
       const duration = track?.duration ?? 1;
       const percent = Math.max(0, Math.min(1, current / duration));
-      if (progressRef.current) progressRef.current.style.width = `${percent * 100}%`;
-      if (headRef.current) headRef.current.style.left = `${percent * 100}%`;
+      const progress = progressRef.current || document.querySelector("[data-wave-progress]");
+      const head = headRef.current || document.querySelector("[data-wave-head]");
+      if (progress) (progress as HTMLElement).style.width = `${percent * 100}%`;
+      if (head) (head as HTMLElement).style.left = `${percent * 100}%`;
       frame = requestAnimationFrame(tick);
     };
     frame = requestAnimationFrame(tick);
@@ -123,11 +125,13 @@ export function Waveform() {
       <div className="pointer-events-none absolute inset-0">
         <div
           ref={progressRef}
+          data-wave-progress="1"
           className="absolute inset-y-0 left-0 border-r border-lime-acid/45 bg-gradient-to-r from-lime-acid/[0.025] to-lime-acid/[0.09]"
           style={{ width: "0%" }}
         />
         <div
           ref={headRef}
+          data-wave-head="1"
           className="absolute inset-y-0 w-px bg-lime-acid/70 shadow-[0_0_8px_rgba(216,255,87,0.55)]"
           style={{ left: "0%" }}
         />
