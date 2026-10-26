@@ -65,7 +65,7 @@ export function UploadZone({ variant = "compact" }: { variant?: "compact" | "her
               Masteriza como un estudio.
               <span className="block text-lime-acid">En minutos.</span>
             </h1>
-            <p className="mt-4 max-w-md text-[12px] leading-relaxed text-ink-400 sm:text-[13px]">
+            <p className="mt-4 max-w-md text-[12px] leading-relaxed text-ink-300 sm:text-[13px]">
               Sube tu mezcla, analiza cada frecuencia y aplica una cadena profesional de EQ,
               compresión, saturación y limitación true-peak. Exporta al estándar exacto de cada
               plataforma.
@@ -81,7 +81,7 @@ export function UploadZone({ variant = "compact" }: { variant?: "compact" | "her
                 {processing ? <Loader2 size={16} className="animate-spin" /> : <UploadCloud size={16} />}
                 {processing ? "Analizando audio…" : "Seleccionar audio"}
               </button>
-              <div className="flex items-center gap-1.5 text-[10px] text-ink-500">
+              <div className="flex items-center gap-1.5 text-[10px] text-ink-200">
                 <ShieldCheck size={12} className="text-lime-acid/60" />
                 Procesado 100% local
               </div>
@@ -97,7 +97,7 @@ export function UploadZone({ variant = "compact" }: { variant?: "compact" | "her
                   key={item.label}
                   className="rounded-lg border border-white/[0.055] bg-white/[0.02] px-2.5 py-2"
                 >
-                  <div className="text-[8px] uppercase tracking-[0.12em] text-ink-600">{item.label}</div>
+                  <div className="text-[8px] uppercase tracking-[0.12em] text-ink-300">{item.label}</div>
                   <div className="num mt-0.5 text-[10px] font-medium text-ink-200">{item.value}</div>
                 </div>
               ))}
@@ -150,7 +150,7 @@ export function UploadZone({ variant = "compact" }: { variant?: "compact" | "her
             <div className="mt-4 text-[13px] font-medium text-ink-100">
               {dragging ? "Suelta el archivo" : "Arrastra tu tema aquí"}
             </div>
-            <div className="mt-1 text-[10px] text-ink-500">
+            <div className="mt-1 text-[10px] text-ink-200">
               o haz clic para explorar tus archivos
             </div>
 
@@ -158,13 +158,13 @@ export function UploadZone({ variant = "compact" }: { variant?: "compact" | "her
               {["MP3", "WAV", "FLAC"].map((format) => (
                 <span
                   key={format}
-                  className="rounded-[5px] border border-white/[0.07] bg-white/[0.03] px-1.5 py-0.5 text-[8px] font-semibold tracking-wide text-ink-400"
+                  className="rounded-[5px] border border-white/[0.07] bg-white/[0.03] px-1.5 py-0.5 text-[8px] font-semibold tracking-wide text-ink-300"
                 >
                   {format}
                 </span>
               ))}
-              <span className="text-[8px] text-ink-600">·</span>
-              <span className="inline-flex items-center gap-1 text-[8px] text-ink-500">
+              <span className="text-[8px] text-ink-300">·</span>
+              <span className="inline-flex items-center gap-1 text-[8px] text-ink-200">
                 <HardDrive size={9} /> Hasta 500 MB
               </span>
             </div>
@@ -217,7 +217,7 @@ export function UploadZone({ variant = "compact" }: { variant?: "compact" | "her
         <p className="mt-3 text-[11px] font-medium text-ink-200">
           {processing ? "Analizando audio…" : "Añade tu primera pista"}
         </p>
-        <p className="mt-0.5 text-[9px] text-ink-500">MP3 · WAV · FLAC · máx. 500 MB</p>
+        <p className="mt-0.5 text-[9px] text-ink-200">MP3 · WAV · FLAC · máx. 500 MB</p>
         <span className="mt-3 text-[9px] font-medium text-lime-acid/80">
           Seleccionar archivo
         </span>
@@ -248,14 +248,14 @@ export function UploadZone({ variant = "compact" }: { variant?: "compact" | "her
                 clearTrack();
                 notify("info", "Pista quitada", "La sesión de masterizado se ha reiniciado.");
               }}
-              className="focus-ring -mr-1 -mt-1 grid h-5 w-5 shrink-0 place-items-center rounded text-ink-600 transition hover:bg-white/[0.06] hover:text-danger"
+              className="focus-ring -mr-1 -mt-1 grid h-5 w-5 shrink-0 place-items-center rounded text-ink-300 transition hover:bg-white/[0.06] hover:text-danger"
               aria-label="Quitar pista"
             >
               <X size={11} />
             </button>
           </div>
-          <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[9px] text-ink-500">
-            <span className="rounded border border-white/[0.07] bg-white/[0.03] px-1 py-px font-semibold uppercase text-ink-400">
+          <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[9px] text-ink-200">
+            <span className="rounded border border-white/[0.07] bg-white/[0.03] px-1 py-px font-semibold uppercase text-ink-300">
               {track.extension}
             </span>
             <span className="num">{formatTime(track.duration)}</span>
@@ -266,12 +266,12 @@ export function UploadZone({ variant = "compact" }: { variant?: "compact" | "her
             {track.bitDepth && <span className="num">{track.bitDepth}-bit</span>}
           </div>
           <div className="mt-2 flex items-center gap-2 text-[9px]">
-            <span className="text-ink-500">Entrada</span>
+            <span className="text-ink-200">Entrada</span>
             <span className="num font-medium text-ink-200">
               {formatLufs(track.stats.lufsIntegrated)} LUFS
             </span>
-            <span className="text-ink-700">·</span>
-            <span className="num text-ink-400">{track.stats.truePeakDb.toFixed(1)} dBTP</span>
+            <span className="text-ink-300">·</span>
+            <span className="num text-ink-300">{track.stats.truePeakDb.toFixed(1)} dBTP</span>
           </div>
         </div>
       </div>
@@ -280,7 +280,7 @@ export function UploadZone({ variant = "compact" }: { variant?: "compact" | "her
           type="button"
           onClick={openPicker}
           disabled={processing}
-          className="focus-ring flex flex-1 items-center justify-center gap-1.5 py-2 text-[9px] font-medium text-ink-400 transition hover:bg-white/[0.03] hover:text-white disabled:opacity-40"
+          className="focus-ring flex flex-1 items-center justify-center gap-1.5 py-2 text-[9px] font-medium text-ink-300 transition hover:bg-white/[0.03] hover:text-white disabled:opacity-40"
         >
           <RefreshCw size={10} />
           Reemplazar audio

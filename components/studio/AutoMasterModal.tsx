@@ -63,7 +63,7 @@ export function AutoMasterModal() {
         </div>
         <div className="min-w-0 flex-1">
           <h3 className="text-[12px] font-semibold text-white">Cadena aplicada</h3>
-          <p className="mt-0.5 text-[9px] leading-relaxed text-ink-400">
+          <p className="mt-0.5 text-[9px] leading-relaxed text-ink-300">
             El motor ha analizado el balance espectral, la dinámica y la sonoridad de tu mezcla y
             ha ajustado los seis módulos DSP.
           </p>
@@ -77,10 +77,10 @@ export function AutoMasterModal() {
           { label: "Techo", value: settings.limiter.ceiling.toFixed(1), unit: "dBTP" },
         ].map((item) => (
           <div key={item.label} className="rounded-lg border border-white/[0.055] bg-black/20 px-2.5 py-2">
-            <div className="text-[7.5px] uppercase tracking-wide text-ink-600">{item.label}</div>
+            <div className="text-[7.5px] uppercase tracking-wide text-ink-300">{item.label}</div>
             <div className="num mt-0.5 text-[16px] font-semibold text-white">
               {item.value}
-              <span className="ml-1 text-[7px] font-normal text-ink-500">{item.unit}</span>
+              <span className="ml-1 text-[7px] font-normal text-ink-200">{item.unit}</span>
             </div>
           </div>
         ))}
@@ -112,7 +112,7 @@ export function AutoMasterModal() {
             key={band.id}
             className="flex items-center justify-between rounded-md border border-white/[0.045] bg-black/15 px-2 py-1.5"
           >
-            <span className="flex items-center gap-1.5 text-[8px] text-ink-500">
+            <span className="flex items-center gap-1.5 text-[8px] text-ink-200">
               <span
                 className="h-1 w-1 rounded-full"
                 style={{ background: ["#d8ff57", "#ffb45e", "#5eead4", "#a78bfa", "#fb7185"][index] }}
@@ -122,7 +122,7 @@ export function AutoMasterModal() {
             <span
               className={cn(
                 "num text-[8.5px] font-medium",
-                Math.abs(band.gain) < 0.05 ? "text-ink-600" : "text-ink-200",
+                Math.abs(band.gain) < 0.05 ? "text-ink-300" : "text-ink-200",
               )}
             >
               {band.gain > 0 ? "+" : ""}
@@ -131,14 +131,14 @@ export function AutoMasterModal() {
           </div>
         ))}
         <div className="flex items-center justify-between rounded-md border border-white/[0.045] bg-black/15 px-2 py-1.5">
-          <span className="text-[8px] text-ink-500">Compresor</span>
+          <span className="text-[8px] text-ink-200">Compresor</span>
           <span className="num text-[8.5px] font-medium text-ink-200">
             {settings.compressor.ratio.toFixed(1)}:1
           </span>
         </div>
       </div>
 
-      <p className="mt-3 text-[7.5px] leading-relaxed text-ink-600">
+      <p className="mt-3 text-[7.5px] leading-relaxed text-ink-300">
         Motor heurístico local: no se envía audio a ningún servidor. Puedes afinar cualquier
         parámetro manualmente; la exportación volverá a medir y normalizar el resultado final.
       </p>

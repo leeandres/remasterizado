@@ -30,24 +30,24 @@ export function TrackPanel() {
             <h2 className="max-w-[42ch] truncate text-[12px] font-semibold text-white" title={track.name}>
               {track.name}
             </h2>
-            <span className="rounded border border-white/[0.08] bg-white/[0.035] px-1 py-px text-[7px] font-semibold uppercase tracking-wider text-ink-400">
+            <span className="rounded border border-white/[0.08] bg-white/[0.035] px-1 py-px text-[7px] font-semibold uppercase tracking-wider text-ink-300">
               {track.extension}
             </span>
             {track.bitDepth && (
-              <span className="num rounded border border-white/[0.06] px-1 py-px text-[7px] text-ink-500">
+              <span className="num rounded border border-white/[0.06] px-1 py-px text-[7px] text-ink-200">
                 {track.bitDepth}-bit
               </span>
             )}
           </div>
-          <div className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[8.5px] text-ink-500">
+          <div className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[8.5px] text-ink-200">
             <span className="num">{formatTime(track.duration)}</span>
-            <span className="text-ink-700">·</span>
+            <span className="text-ink-300">·</span>
             <span className="num">{(track.sampleRate / 1000).toFixed(1)} kHz</span>
-            <span className="text-ink-700">·</span>
+            <span className="text-ink-300">·</span>
             <span className="num">{track.channels === 1 ? "mono" : "estéreo"}</span>
-            <span className="text-ink-700">·</span>
+            <span className="text-ink-300">·</span>
             <span>{formatBytes(track.size)}</span>
-            <span className="text-ink-700">·</span>
+            <span className="text-ink-300">·</span>
             <span className="num">Entrada {formatLufs(track.stats.lufsIntegrated)} LUFS</span>
           </div>
         </div>
@@ -59,7 +59,7 @@ export function TrackPanel() {
               style={{ background: profile.accent, boxShadow: `0 0 6px ${profile.accent}66` }}
             />
             <span className="text-[8.5px] font-medium text-ink-300">{profile.name}</span>
-            <span className="num text-[8px] text-ink-500">{target.toFixed(1)} LUFS</span>
+            <span className="num text-[8px] text-ink-200">{target.toFixed(1)} LUFS</span>
           </div>
           <button
             type="button"
@@ -81,7 +81,7 @@ export function TrackPanel() {
 
       <Transport />
 
-      <div className="flex items-center justify-between border-t border-white/[0.045] px-3 py-1.5 text-[8px] text-ink-600">
+      <div className="flex items-center justify-between border-t border-white/[0.045] px-3 py-1.5 text-[8px] text-ink-300">
         <span className="inline-flex items-center gap-1">
           <Sparkles size={8} className="text-lime-acid/50" />
           {platform === "spotify"

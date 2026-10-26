@@ -214,7 +214,7 @@ export function Spectrum({ active }: SpectrumProps) {
         <span
           className={`h-1.5 w-1.5 rounded-full ${active ? "bg-lime-acid animate-pulse-soft" : "bg-ink-500"}`}
         />
-        <span className="num text-[8px] uppercase tracking-[0.16em] text-ink-400">FFT 4096</span>
+        <span className="num text-[8px] uppercase tracking-[0.16em] text-ink-300">FFT 4096</span>
       </div>
     </div>
   );

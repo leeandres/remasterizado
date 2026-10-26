@@ -62,7 +62,7 @@ export function Transport() {
           type="button"
           onClick={stop}
           disabled={!track}
-          className="focus-ring grid h-8 w-8 place-items-center rounded-lg text-ink-400 transition hover:bg-white/[0.06] hover:text-white disabled:opacity-30"
+          className="focus-ring grid h-8 w-8 place-items-center rounded-lg text-ink-300 transition hover:bg-white/[0.06] hover:text-white disabled:opacity-30"
           aria-label="Detener"
         >
           <Square size={13} fill="currentColor" />
@@ -75,7 +75,7 @@ export function Transport() {
             "focus-ring grid h-8 w-8 place-items-center rounded-lg border transition disabled:opacity-30",
             loop
               ? "border-lime-acid/30 bg-lime-acid/10 text-lime-acid"
-              : "border-transparent text-ink-400 hover:bg-white/[0.06] hover:text-white",
+              : "border-transparent text-ink-300 hover:bg-white/[0.06] hover:text-white",
           )}
           aria-label="Repetir"
           title={region ? "Repetir selección" : "Repetir pista completa"}
@@ -88,12 +88,12 @@ export function Transport() {
             <span ref={timeRef} className="num text-[13px] font-semibold text-white">
               0:00.000
             </span>
-            <span className="text-[10px] text-ink-600">/</span>
-            <span className="num text-[10px] text-ink-400">
+            <span className="text-[10px] text-ink-300">/</span>
+            <span className="num text-[10px] text-ink-300">
               {formatTime(track?.duration ?? 0, true)}
             </span>
           </div>
-          <div className="mt-0.5 flex items-center gap-1.5 text-[9px] text-ink-500">
+          <div className="mt-0.5 flex items-center gap-1.5 text-[9px] text-ink-200">
             {region ? (
               <>
                 <Scissors size={9} className="text-lime-acid/70" />
@@ -115,7 +115,7 @@ export function Transport() {
             disabled={!track}
             className={cn(
               "focus-ring rounded-md px-2.5 py-1 text-[10px] font-semibold transition disabled:opacity-30",
-              bypass ? "bg-amber-glow/90 text-[#1a1205]" : "text-ink-400 hover:text-white",
+              bypass ? "bg-amber-glow/90 text-[#1a1205]" : "text-ink-300 hover:text-white",
             )}
             title="Escuchar original (A)"
           >
@@ -127,7 +127,7 @@ export function Transport() {
             disabled={!track}
             className={cn(
               "focus-ring rounded-md px-2.5 py-1 text-[10px] font-semibold transition disabled:opacity-30",
-              !bypass ? "bg-lime-acid text-[#0a0c04]" : "text-ink-400 hover:text-white",
+              !bypass ? "bg-lime-acid text-[#0a0c04]" : "text-ink-300 hover:text-white",
             )}
             title="Escuchar masterizado (B)"
           >
@@ -139,7 +139,7 @@ export function Transport() {
           <button
             type="button"
             onClick={() => setVolume(volume > 0 ? 0 : 0.9)}
-            className="focus-ring grid h-7 w-7 place-items-center rounded-md text-ink-400 transition hover:text-white"
+            className="focus-ring grid h-7 w-7 place-items-center rounded-md text-ink-300 transition hover:text-white"
             aria-label={volume > 0 ? "Silenciar" : "Activar sonido"}
           >
             {volume <= 0 ? (
@@ -167,12 +167,12 @@ export function Transport() {
         </div>
       </div>
 
-      <div className="flex items-center gap-2 pl-[52px] text-[9px] text-ink-600">
+      <div className="flex items-center gap-2 pl-[52px] text-[9px] text-ink-300">
         <span className="inline-flex items-center gap-1">
           <span className={cn("h-1 w-1 rounded-full", bypass ? "bg-amber-glow" : "bg-lime-acid")} />
           {bypass ? "Original sin procesar" : "Cadena MasterAI activa"}
         </span>
-        <span className="text-ink-700">·</span>
+        <span className="text-ink-300">·</span>
         <span>Vista previa con limitador aproximado; la exportación usa brickwall true-peak.</span>
       </div>
     </div>

@@ -30,7 +30,7 @@ export function MobileNav() {
               onClick={() => setView(item.id)}
               className={cn(
                 "focus-ring relative flex flex-col items-center gap-1 py-2.5 text-[8.5px] font-medium transition",
-                active ? "text-lime-acid" : "text-ink-500",
+                active ? "text-lime-acid" : "text-ink-200",
               )}
               aria-current={active ? "page" : undefined}
             >

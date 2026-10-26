@@ -95,22 +95,22 @@ function RackModule({
           </span>
           <span className="min-w-0 flex-1">
             <span className="flex items-center gap-1.5">
-              <span className="num text-[7px] font-medium tracking-wider text-ink-600">{index}</span>
+              <span className="num text-[7px] font-medium tracking-wider text-ink-300">{index}</span>
               <span
                 className={cn(
                   "truncate text-[10.5px] font-medium",
-                  disabled ? "text-ink-500" : "text-ink-100",
+                  disabled ? "text-ink-200" : "text-ink-100",
                 )}
               >
                 {title}
               </span>
             </span>
-            <span className="mt-0.5 block truncate text-[8px] text-ink-500">{summary}</span>
+            <span className="mt-0.5 block truncate text-[8px] text-ink-200">{summary}</span>
           </span>
           <ChevronDown
             size={12}
             className={cn(
-              "shrink-0 text-ink-600 transition-transform duration-200",
+              "shrink-0 text-ink-300 transition-transform duration-200",
               open && "rotate-180",
             )}
           />
@@ -146,7 +146,7 @@ function GainReductionMeter() {
 
   return (
     <div className="mt-3 flex items-center gap-2">
-      <span className="text-[8px] uppercase tracking-wide text-ink-600">GR</span>
+      <span className="text-[8px] uppercase tracking-wide text-ink-300">GR</span>
       <div className="h-1 flex-1 overflow-hidden rounded-full bg-white/[0.06]">
         <div
           className="h-full rounded-full bg-gradient-to-r from-amber-glow to-danger transition-[width] duration-150"
@@ -174,7 +174,7 @@ function LimiterStatus() {
   return (
     <div className="mt-3 rounded-lg border border-white/[0.05] bg-black/25 px-2.5 py-2">
       <div className="flex items-center justify-between">
-        <span className="text-[8px] uppercase tracking-wide text-ink-600">Pico de salida</span>
+        <span className="text-[8px] uppercase tracking-wide text-ink-300">Pico de salida</span>
         <span className={cn("num text-[9px] font-medium", hot ? "text-danger" : "text-lime-acid")}>
           {peak > -95 ? `${peak.toFixed(1)} dBTP` : "—"}
         </span>
@@ -255,9 +255,9 @@ export function RackPanel() {
             </span>
             <div>
               <div className="text-[10.5px] font-semibold text-white">Cadena de masterización</div>
-              <div className="mt-0.5 flex items-center gap-1 text-[8px] text-ink-500">
+              <div className="mt-0.5 flex items-center gap-1 text-[8px] text-ink-200">
                 <span>{profile.name}</span>
-                <span className="text-ink-700">·</span>
+                <span className="text-ink-300">·</span>
                 <span className="num">{formatLufs(settings.targetLUFS)} LUFS</span>
               </div>
             </div>
@@ -265,25 +265,25 @@ export function RackPanel() {
           <button
             type="button"
             onClick={resetSettings}
-            className="focus-ring inline-flex items-center gap-1 rounded-md px-1.5 py-1 text-[8px] text-ink-500 transition hover:bg-white/[0.05] hover:text-ink-200"
+            className="focus-ring inline-flex items-center gap-1 rounded-md px-1.5 py-1 text-[8px] text-ink-200 transition hover:bg-white/[0.05] hover:text-ink-200"
             title="Restablecer la cadena al preset"
           >
             <RotateCcw size={10} />
             Reset
           </button>
         </div>
-        <div className="flex items-center gap-1 overflow-hidden px-3 py-2 text-[7px] uppercase tracking-[0.1em] text-ink-600">
+        <div className="flex items-center gap-1 overflow-hidden px-3 py-2 text-[7px] uppercase tracking-[0.1em] text-ink-300">
           {["IN", "FILTRO", "EQ", "COMP", "SAT", "LIM"].map((step, index) => (
             <span key={step} className="flex items-center gap-1">
               <span
                 className={cn(
                   "whitespace-nowrap",
-                  step === "IN" ? "text-ink-400" : "text-ink-500",
+                  step === "IN" ? "text-ink-300" : "text-ink-200",
                 )}
               >
                 {step}
               </span>
-              {index < 5 && <span className="text-ink-700">›</span>}
+              {index < 5 && <span className="text-ink-300">›</span>}
             </span>
           ))}
           <span className="ml-auto flex items-center gap-1 whitespace-nowrap">
@@ -293,7 +293,7 @@ export function RackPanel() {
                 bypass ? "bg-amber-glow" : track ? "bg-lime-acid" : "bg-ink-600",
               )}
             />
-            <span className="text-ink-500">{bypass ? "bypass" : track ? "activa" : "sin audio"}</span>
+            <span className="text-ink-200">{bypass ? "bypass" : track ? "activa" : "sin audio"}</span>
           </span>
         </div>
       </div>
@@ -328,7 +328,7 @@ export function RackPanel() {
             onChange={(value) => set((next) => (next.outputGain = value))}
           />
         </div>
-        <p className="mt-2 text-[8px] leading-relaxed text-ink-600">
+        <p className="mt-2 text-[8px] leading-relaxed text-ink-300">
           El trim de salida se aplica antes del limitador de vista previa. El export normaliza al
           objetivo de la plataforma.
         </p>
@@ -367,7 +367,7 @@ export function RackPanel() {
             onChange={(value) => set((next) => (next.filter.lowpass = value))}
           />
         </div>
-        <p className="mt-2 text-[8px] text-ink-600">Biquad 12 dB/oct · limpieza de sub y aire.</p>
+        <p className="mt-2 text-[8px] text-ink-300">Biquad 12 dB/oct · limpieza de sub y aire.</p>
       </RackModule>
 
       <RackModule
@@ -394,7 +394,7 @@ export function RackPanel() {
               >
                 {band.label}
               </button>
-              <span className="num w-11 shrink-0 text-[8px] text-ink-600">
+              <span className="num w-11 shrink-0 text-[8px] text-ink-300">
                 {formatFreq(band.freq)}Hz
               </span>
               <input
@@ -426,7 +426,7 @@ export function RackPanel() {
         <button
           type="button"
           onClick={openEq}
-          className="focus-ring mt-2.5 flex w-full items-center justify-between rounded-lg border border-white/[0.06] bg-white/[0.02] px-2.5 py-1.5 text-[8.5px] text-ink-400 transition hover:border-white/12 hover:text-white"
+          className="focus-ring mt-2.5 flex w-full items-center justify-between rounded-lg border border-white/[0.06] bg-white/[0.02] px-2.5 py-1.5 text-[8.5px] text-ink-300 transition hover:border-white/12 hover:text-white"
         >
           <span>Editor gráfico · frecuencia y Q</span>
           <span className="text-[9px] text-lime-acid/80">Abrir →</span>
@@ -446,7 +446,7 @@ export function RackPanel() {
         <div className="flex items-center justify-between rounded-lg border border-white/[0.05] bg-black/20 px-2.5 py-1.5">
           <div>
             <div className="text-[8.5px] text-ink-300">Compresión multibanda</div>
-            <div className="text-[7.5px] text-ink-600">220 Hz / 3.5 kHz · 3 bandas</div>
+            <div className="text-[7.5px] text-ink-300">220 Hz / 3.5 kHz · 3 bandas</div>
           </div>
           <Toggle
             checked={settings.compressor.multiband}
@@ -583,12 +583,12 @@ export function RackPanel() {
           />
           <div className="relative overflow-hidden rounded-lg border border-white/[0.05] bg-black/20">
             <SaturationCurve drive={settings.saturation.drive} />
-            <span className="absolute bottom-1 left-0 right-0 text-center text-[6.5px] uppercase tracking-wider text-ink-600">
+            <span className="absolute bottom-1 left-0 right-0 text-center text-[6.5px] uppercase tracking-wider text-ink-300">
               tanh
             </span>
           </div>
         </div>
-        <p className="mt-2 text-[8px] text-ink-600">
+        <p className="mt-2 text-[8px] text-ink-300">
           Armónicos suaves y densidad analógica antes del limitador.
         </p>
       </RackModule>
@@ -607,14 +607,14 @@ export function RackPanel() {
             <div className="text-[8.5px] text-ink-300">True-peak ceiling</div>
             <div className="num text-[15px] font-semibold text-white">
               {settings.limiter.ceiling.toFixed(1)}
-              <span className="ml-1 text-[8px] font-normal text-ink-500">dBTP</span>
+              <span className="ml-1 text-[8px] font-normal text-ink-200">dBTP</span>
             </div>
           </div>
           <div className="flex flex-col items-end gap-1">
             <span className="inline-flex items-center gap-1 rounded border border-lime-acid/20 bg-lime-acid/[0.06] px-1.5 py-0.5 text-[7px] font-semibold uppercase tracking-wide text-lime-acid/80">
               <Lock size={7} /> Fijado
             </span>
-            <span className="text-[7px] text-ink-600">Estándar streaming</span>
+            <span className="text-[7px] text-ink-300">Estándar streaming</span>
           </div>
         </div>
         <div className="mt-2.5 flex items-end justify-between gap-4">
@@ -630,7 +630,7 @@ export function RackPanel() {
               format={(value) => `${Math.round(value)} ms`}
               onChange={(value) => set((next) => (next.limiter.releaseMs = value))}
             />
-            <p className="mt-2 text-[7.5px] leading-relaxed text-ink-600">
+            <p className="mt-2 text-[7.5px] leading-relaxed text-ink-300">
               La vista previa usa un compresor rápido. El export aplica un limitador true-peak
               4× con lookahead.
             </p>
@@ -654,7 +654,7 @@ export function RackPanel() {
       <section className="panel overflow-hidden">
         <div className="flex items-center justify-between border-b border-white/[0.055] px-3 py-2.5">
           <span className="label">Salida & entrega</span>
-          <span className="inline-flex items-center gap-1 text-[7.5px] uppercase tracking-wider text-ink-500">
+          <span className="inline-flex items-center gap-1 text-[7.5px] uppercase tracking-wider text-ink-200">
             <span
               className="h-1.5 w-1.5 rounded-full"
               style={{ background: platformInfo.color }}
@@ -666,7 +666,7 @@ export function RackPanel() {
           <div className="flex items-center justify-between gap-3 rounded-lg border border-white/[0.05] bg-black/20 px-2.5 py-2">
             <div>
               <div className="text-[9px] font-medium text-ink-200">Normalizar al destino</div>
-              <div className="mt-0.5 text-[8px] text-ink-600">
+              <div className="mt-0.5 text-[8px] text-ink-300">
                 {formatLufs(settings.targetLUFS)} LUFS · techo {settings.limiter.ceiling.toFixed(1)} dBTP
               </div>
             </div>
@@ -679,11 +679,11 @@ export function RackPanel() {
 
           <div className="grid grid-cols-2 gap-2">
             <div className="rounded-lg border border-white/[0.05] bg-white/[0.018] px-2 py-1.5">
-              <div className="text-[7px] uppercase tracking-wide text-ink-600">WAV</div>
+              <div className="text-[7px] uppercase tracking-wide text-ink-300">WAV</div>
               <div className="num mt-0.5 text-[8.5px] text-ink-300">24-bit · 48 kHz</div>
             </div>
             <div className="rounded-lg border border-white/[0.05] bg-white/[0.018] px-2 py-1.5">
-              <div className="text-[7px] uppercase tracking-wide text-ink-600">MP3</div>
+              <div className="text-[7px] uppercase tracking-wide text-ink-300">MP3</div>
               <div className="num mt-0.5 text-[8.5px] text-ink-300">320 kbps CBR</div>
             </div>
           </div>
@@ -712,7 +712,7 @@ export function RackPanel() {
             </Button>
           </div>
 
-          <p className="flex items-start gap-1.5 text-[7.5px] leading-relaxed text-ink-600">
+          <p className="flex items-start gap-1.5 text-[7.5px] leading-relaxed text-ink-300">
             <Sparkles size={9} className="mt-px shrink-0 text-lime-acid/60" />
             El render final mide LUFS integrada, limita picos verdaderos e itera hasta alcanzar
             el objetivo de {platformInfo.name}.

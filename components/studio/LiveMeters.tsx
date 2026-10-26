@@ -71,7 +71,7 @@ export function LiveMeters() {
             <span className="num text-[26px] font-semibold leading-none text-white">
               {track ? formatLufs(meters.integrated) : "—"}
             </span>
-            <span className="text-[9px] uppercase text-ink-500">LUFS</span>
+            <span className="text-[9px] uppercase text-ink-200">LUFS</span>
           </div>
           <div className="mt-2 h-1 overflow-hidden rounded-full bg-white/[0.07]">
             <div
@@ -80,12 +80,12 @@ export function LiveMeters() {
             />
           </div>
           <div className="mt-1.5 flex items-center justify-between text-[9px]">
-            <span className="text-ink-500">Objetivo {target.toFixed(1)}</span>
+            <span className="text-ink-200">Objetivo {target.toFixed(1)}</span>
             <span
               className={cn(
                 "num",
                 delta === null
-                  ? "text-ink-600"
+                  ? "text-ink-300"
                   : Math.abs(delta) <= 0.5
                     ? "text-lime-acid"
                     : "text-amber-glow",
@@ -109,7 +109,7 @@ export function LiveMeters() {
             <span className="num text-[26px] font-semibold leading-none text-white">
               {track ? formatLufs(meters.shortTerm) : "—"}
             </span>
-            <span className="text-[9px] uppercase text-ink-500">LUFS</span>
+            <span className="text-[9px] uppercase text-ink-200">LUFS</span>
           </div>
           <div className="relative mt-2 h-1 overflow-hidden rounded-full bg-white/[0.07]">
             <div
@@ -117,7 +117,7 @@ export function LiveMeters() {
               style={{ width: `${shortPct}%` }}
             />
           </div>
-          <div className="mt-1.5 flex justify-between text-[9px] text-ink-500">
+          <div className="mt-1.5 flex justify-between text-[9px] text-ink-200">
             <span>−40</span>
             <span>−6</span>
           </div>
@@ -140,7 +140,7 @@ export function LiveMeters() {
             >
               {track && meters.truePeakDb > -95 ? meters.truePeakDb.toFixed(1) : "—"}
             </span>
-            <span className="text-[9px] uppercase text-ink-500">dBTP</span>
+            <span className="text-[9px] uppercase text-ink-200">dBTP</span>
           </div>
           <div className="relative mt-2 h-1 overflow-hidden rounded-full bg-white/[0.07]">
             <div
@@ -153,7 +153,7 @@ export function LiveMeters() {
             <div className="absolute inset-y-0 left-[92.8%] w-px bg-white/25" title="-1 dBTP" />
           </div>
           <div className="mt-1.5 flex justify-between text-[9px]">
-            <span className="text-ink-500">−14</span>
+            <span className="text-ink-200">−14</span>
             <span className={peakHot ? "font-semibold text-danger" : "text-lime-acid/80"}>
               {peakHot ? "SOBRE −1.0" : "PROTEGIDO"}
             </span>
@@ -187,7 +187,7 @@ export function LiveMeters() {
               style={{ width: `${corrPct}%` }}
             />
           </div>
-          <div className="mt-1.5 flex justify-between text-[9px] text-ink-500">
+          <div className="mt-1.5 flex justify-between text-[9px] text-ink-200">
             <span>−1</span>
             <span>{meters.correlation < 0.1 ? "RIESGO MONO" : "COMPATIBLE MONO"}</span>
             <span>+1</span>
@@ -197,14 +197,14 @@ export function LiveMeters() {
 
       <div className="flex flex-wrap items-center gap-x-5 gap-y-2 rounded-lg border border-white/[0.045] bg-black/20 px-3 py-2">
         <div className="flex flex-1 items-center gap-3">
-          <span className="num text-[9px] font-semibold text-ink-400">L</span>
+          <span className="num text-[9px] font-semibold text-ink-300">L</span>
           <div className="h-1.5 min-w-[50px] flex-1 overflow-hidden rounded-full bg-white/[0.06]">
             <div
               className="h-full rounded-full bg-gradient-to-r from-lime-acid/50 to-lime-acid transition-[width] duration-100"
               style={{ width: `${Math.max(0, Math.min(100, ((left + 54) / 54) * 100))}%` }}
             />
           </div>
-          <span className="num text-[9px] font-semibold text-ink-400">R</span>
+          <span className="num text-[9px] font-semibold text-ink-300">R</span>
           <div className="h-1.5 min-w-[50px] flex-1 overflow-hidden rounded-full bg-white/[0.06]">
             <div
               className="h-full rounded-full bg-gradient-to-r from-cyan-glow/50 to-cyan-glow transition-[width] duration-100"
@@ -213,7 +213,7 @@ export function LiveMeters() {
           </div>
         </div>
         <div className="flex items-center gap-2">
-          <span className="text-[9px] uppercase tracking-wide text-ink-500">GR</span>
+          <span className="text-[9px] uppercase tracking-wide text-ink-200">GR</span>
           <div className="h-1.5 w-24 overflow-hidden rounded-full bg-white/[0.06]">
             <div
               className="h-full rounded-full bg-gradient-to-r from-amber-glow to-danger transition-[width] duration-100"
@@ -231,7 +231,7 @@ export function LiveMeters() {
               isPlaying ? "bg-lime-acid animate-pulse-soft" : "bg-ink-600",
             )}
           />
-          <span className="text-[9px] uppercase tracking-wide text-ink-500">
+          <span className="text-[9px] uppercase tracking-wide text-ink-200">
             {isPlaying ? "En vivo" : "En pausa"}
           </span>
         </div>

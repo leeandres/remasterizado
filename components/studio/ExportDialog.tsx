@@ -231,7 +231,7 @@ export function ExportDialog() {
 
   const footer = working ? (
     <div className="flex items-center justify-between gap-3">
-      <div className="flex min-w-0 items-center gap-2 text-[9px] text-ink-500">
+      <div className="flex min-w-0 items-center gap-2 text-[9px] text-ink-200">
         <Loader2 size={12} className="shrink-0 animate-spin text-lime-acid" />
         <span className="truncate">{progress?.detail ?? "Preparando exportación…"}</span>
       </div>
@@ -257,7 +257,7 @@ export function ExportDialog() {
     </div>
   ) : (
     <div className="flex items-center justify-between gap-3">
-      <span className="hidden text-[8px] text-ink-600 sm:block">
+      <span className="hidden text-[8px] text-ink-300 sm:block">
         WAV 24-bit / 48 kHz · MP3 320 kbps · medición EBU R128
       </span>
       <div className="flex w-full items-center justify-end gap-2 sm:w-auto">
@@ -323,7 +323,7 @@ export function ExportDialog() {
               <div className="text-[12px] font-semibold text-white">
                 {progress?.detail ?? "Preparando exportación…"}
               </div>
-              <div className="mt-1 text-[9px] leading-relaxed text-ink-500">
+              <div className="mt-1 text-[9px] leading-relaxed text-ink-200">
                 Renderizando a 48 kHz, midiendo loudness integrada e iterando la normalización.
                 No cierres esta pestaña.
               </div>
@@ -348,8 +348,8 @@ export function ExportDialog() {
                     active
                       ? "border-lime-acid/25 bg-lime-acid/[0.05] text-ink-100"
                       : done
-                        ? "border-white/[0.05] bg-white/[0.02] text-ink-400"
-                        : "border-white/[0.04] text-ink-600",
+                        ? "border-white/[0.05] bg-white/[0.02] text-ink-300"
+                        : "border-white/[0.04] text-ink-300",
                   )}
                 >
                   <span
@@ -376,8 +376,8 @@ export function ExportDialog() {
             })}
           </div>
 
-          <div className="mt-4 flex items-start gap-2 rounded-lg border border-white/[0.05] bg-white/[0.015] px-3 py-2 text-[8px] leading-relaxed text-ink-600">
-            <Lock size={10} className="mt-px shrink-0 text-ink-500" />
+          <div className="mt-4 flex items-start gap-2 rounded-lg border border-white/[0.05] bg-white/[0.015] px-3 py-2 text-[8px] leading-relaxed text-ink-300">
+            <Lock size={10} className="mt-px shrink-0 text-ink-200" />
             El render se ejecuta en tu dispositivo. El limitador true-peak y la normalización se
             aplican al archivo final, no solo a la vista previa.
           </div>
@@ -389,7 +389,7 @@ export function ExportDialog() {
               <CheckCircle2 size={26} className="text-lime-acid" />
             </div>
             <h3 className="mt-3 text-[15px] font-semibold text-white">Tu master está listo</h3>
-            <p className="mt-1 max-w-md text-[10px] leading-relaxed text-ink-500">
+            <p className="mt-1 max-w-md text-[10px] leading-relaxed text-ink-200">
               {result.fileName}
             </p>
           </div>
@@ -425,7 +425,7 @@ export function ExportDialog() {
                 key={item.label}
                 className="rounded-xl border border-white/[0.055] bg-black/20 px-3 py-2.5"
               >
-                <div className="text-[7.5px] uppercase tracking-[0.12em] text-ink-600">
+                <div className="text-[7.5px] uppercase tracking-[0.12em] text-ink-300">
                   {item.label}
                 </div>
                 <div
@@ -436,9 +436,9 @@ export function ExportDialog() {
                 >
                   {item.value}
                 </div>
-                <div className="mt-1 flex items-center gap-1 text-[7.5px] text-ink-600">
+                <div className="mt-1 flex items-center gap-1 text-[7.5px] text-ink-300">
                   <span>{item.unit}</span>
-                  <span className="text-ink-700">·</span>
+                  <span className="text-ink-300">·</span>
                   <span>{formatTime(duration)}</span>
                 </div>
               </div>
@@ -446,14 +446,14 @@ export function ExportDialog() {
           </div>
 
           <div className="mt-2 flex flex-wrap items-center justify-between gap-2 rounded-xl border border-white/[0.055] bg-white/[0.018] px-3 py-2.5">
-            <div className="flex items-center gap-2 text-[9px] text-ink-400">
+            <div className="flex items-center gap-2 text-[9px] text-ink-300">
               <span
                 className="h-1.5 w-1.5 rounded-full"
                 style={{ background: platformInfo.color, boxShadow: `0 0 7px ${platformInfo.color}` }}
               />
               {platformInfo.name} · objetivo {formatLufs(settings.targetLUFS)} LUFS
             </div>
-            <div className="flex items-center gap-2 text-[8px] text-ink-500">
+            <div className="flex items-center gap-2 text-[8px] text-ink-200">
               {normalize ? (
                 <>
                   <Check size={9} className="text-lime-acid" /> Normalizado
@@ -463,13 +463,13 @@ export function ExportDialog() {
                   <TriangleAlert size={9} className="text-amber-glow" /> Sin normalizar
                 </>
               )}
-              <span className="text-ink-700">·</span>
+              <span className="text-ink-300">·</span>
               <span>{format === "wav" ? "24-bit / 48 kHz" : "320 kbps CBR"}</span>
             </div>
           </div>
 
-          <div className="mt-3 flex items-start gap-2 rounded-lg border border-white/[0.045] bg-black/15 px-3 py-2 text-[8px] leading-relaxed text-ink-600">
-            <Music2 size={10} className="mt-px shrink-0 text-ink-500" />
+          <div className="mt-3 flex items-start gap-2 rounded-lg border border-white/[0.045] bg-black/15 px-3 py-2 text-[8px] leading-relaxed text-ink-300">
+            <Music2 size={10} className="mt-px shrink-0 text-ink-200" />
             Guardado en el historial local de este dispositivo. Puedes recuperar los ajustes o
             descargar el archivo más tarde desde el historial.
           </div>
@@ -527,7 +527,7 @@ export function ExportDialog() {
                         "grid h-8 w-8 place-items-center rounded-lg border",
                         active
                           ? "border-lime-acid/30 bg-lime-acid/10 text-lime-acid"
-                          : "border-white/[0.07] bg-white/[0.03] text-ink-400",
+                          : "border-white/[0.07] bg-white/[0.03] text-ink-300",
                       )}
                     >
                       <Icon size={15} />
@@ -544,8 +544,8 @@ export function ExportDialog() {
                     </span>
                   </div>
                   <div className="mt-2 text-[11px] font-semibold text-white">{item.title}</div>
-                  <div className="num mt-0.5 text-[8px] text-ink-400">{item.detail}</div>
-                  <div className="mt-1 text-[7.5px] leading-relaxed text-ink-600">{item.note}</div>
+                  <div className="num mt-0.5 text-[8px] text-ink-300">{item.detail}</div>
+                  <div className="mt-1 text-[7.5px] leading-relaxed text-ink-300">{item.note}</div>
                 </button>
               );
             })}
@@ -555,7 +555,7 @@ export function ExportDialog() {
             <div className="flex items-center justify-between gap-3">
               <div>
                 <div className="text-[10px] font-medium text-ink-100">Normalizar loudness</div>
-                <div className="mt-0.5 text-[8px] text-ink-500">
+                <div className="mt-0.5 text-[8px] text-ink-200">
                   Ajusta la ganancia y limita picos hasta alcanzar {formatLufs(settings.targetLUFS)} LUFS
                   con techo {settings.limiter.ceiling.toFixed(1)} dBTP
                 </div>
@@ -565,19 +565,19 @@ export function ExportDialog() {
 
             <div className="mt-3 grid grid-cols-3 gap-2 border-t border-white/[0.05] pt-2.5">
               <div>
-                <div className="text-[7px] uppercase tracking-wide text-ink-600">Objetivo</div>
+                <div className="text-[7px] uppercase tracking-wide text-ink-300">Objetivo</div>
                 <div className="num mt-0.5 text-[10px] text-ink-200">
                   {formatLufs(settings.targetLUFS)} LUFS
                 </div>
               </div>
               <div>
-                <div className="text-[7px] uppercase tracking-wide text-ink-600">Techo</div>
+                <div className="text-[7px] uppercase tracking-wide text-ink-300">Techo</div>
                 <div className="num mt-0.5 text-[10px] text-ink-200">
                   {settings.limiter.ceiling.toFixed(1)} dBTP
                 </div>
               </div>
               <div>
-                <div className="text-[7px] uppercase tracking-wide text-ink-600">Duración</div>
+                <div className="text-[7px] uppercase tracking-wide text-ink-300">Duración</div>
                 <div className="num mt-0.5 text-[10px] text-ink-200">{formatTime(duration)}</div>
               </div>
             </div>
@@ -602,19 +602,19 @@ export function ExportDialog() {
                 </span>
                 <div>
                   <div className="text-[9.5px] font-medium text-ink-200">Exportar solo la selección</div>
-                  <div className="num mt-0.5 text-[8px] text-ink-500">
+                  <div className="num mt-0.5 text-[8px] text-ink-200">
                     {formatTime(region.start)} → {formatTime(region.end)} · {formatTime(duration)}
                   </div>
                 </div>
               </div>
-              <span className="rounded border border-white/[0.07] px-1.5 py-0.5 text-[7px] uppercase tracking-wider text-ink-500">
+              <span className="rounded border border-white/[0.07] px-1.5 py-0.5 text-[7px] uppercase tracking-wider text-ink-200">
                 {useSelection ? "región" : "pista completa"}
               </span>
             </button>
           )}
 
           <div className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-white/[0.055] bg-white/[0.015] px-3 py-2.5">
-            <div className="flex items-center gap-2 text-[8px] text-ink-500">
+            <div className="flex items-center gap-2 text-[8px] text-ink-200">
               <ArrowRight size={10} className="text-lime-acid/60" />
               Salida estimada
             </div>
@@ -641,7 +641,7 @@ export function ExportDialog() {
             </div>
           )}
 
-          <p className="flex items-start gap-1.5 text-[8px] leading-relaxed text-ink-600">
+          <p className="flex items-start gap-1.5 text-[8px] leading-relaxed text-ink-300">
             <Lock size={9} className="mt-px shrink-0" />
             Todo el procesado y la codificación ocurren en tu navegador. Tus archivos nunca salen
             de este dispositivo.

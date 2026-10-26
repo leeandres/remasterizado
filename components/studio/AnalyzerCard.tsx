@@ -43,7 +43,7 @@ export function AnalyzerCard() {
                   "focus-ring inline-flex items-center gap-1.5 rounded-md px-2.5 py-1.5 text-[9.5px] font-medium transition",
                   active
                     ? "bg-white/[0.08] text-white shadow-sm"
-                    : "text-ink-500 hover:text-ink-200",
+                    : "text-ink-200 hover:text-ink-200",
                 )}
               >
                 <Icon size={11} className={active ? "text-lime-acid" : ""} />
@@ -53,7 +53,7 @@ export function AnalyzerCard() {
           })}
         </div>
 
-        <span className="hidden flex-1 truncate text-right text-[8px] text-ink-600 lg:block">
+        <span className="hidden flex-1 truncate text-right text-[8px] text-ink-300 lg:block">
           {HINTS[tab]}
         </span>
 
@@ -64,7 +64,7 @@ export function AnalyzerCard() {
               isPlaying ? "bg-lime-acid animate-pulse-soft" : "bg-ink-600",
             )}
           />
-          <span className="num text-[7.5px] uppercase tracking-[0.12em] text-ink-500">
+          <span className="num text-[7.5px] uppercase tracking-[0.12em] text-ink-200">
             {isPlaying ? "live" : "hold"}
           </span>
         </span>

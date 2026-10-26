@@ -339,7 +339,7 @@ export function EQEditor({ bands, enabled, active, onChange }: EQEditorProps) {
         onDoubleClick={onDoubleClick}
       />
       <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-white/[0.05] px-3 py-2.5">
-        <div className="flex items-center gap-2 text-[10px] text-ink-400">
+        <div className="flex items-center gap-2 text-[10px] text-ink-300">
           <span className="inline-flex items-center gap-1.5 rounded-md bg-white/[0.04] px-2 py-1">
             <span
               className="h-1.5 w-1.5 rounded-full"
@@ -353,7 +353,7 @@ export function EQEditor({ bands, enabled, active, onChange }: EQEditorProps) {
         </div>
 
         <div className="flex min-w-[190px] flex-1 items-center gap-3 sm:max-w-[260px]">
-          <span className="text-[10px] text-ink-400">Q</span>
+          <span className="text-[10px] text-ink-300">Q</span>
           <input
             type="range"
             className="range w-full"
@@ -379,7 +379,7 @@ export function EQEditor({ bands, enabled, active, onChange }: EQEditorProps) {
               key={band.id}
               type="button"
               onClick={() => setSelected(index)}
-              className="focus-ring flex h-6 items-center gap-1.5 rounded-md border border-transparent px-1.5 text-[9px] text-ink-400 transition hover:border-white/10 hover:text-ink-100"
+              className="focus-ring flex h-6 items-center gap-1.5 rounded-md border border-transparent px-1.5 text-[9px] text-ink-300 transition hover:border-white/10 hover:text-ink-100"
               aria-label={`Seleccionar banda ${band.label}`}
             >
               <span

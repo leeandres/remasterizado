@@ -157,7 +157,7 @@ export function Goniometer({ active }: GoniometerProps) {
         <span
           className={`h-1.5 w-1.5 rounded-full ${active ? "bg-cyan-glow animate-pulse-soft" : "bg-ink-500"}`}
         />
-        <span className="num text-[8px] uppercase tracking-[0.16em] text-ink-400">Lissajous</span>
+        <span className="num text-[8px] uppercase tracking-[0.16em] text-ink-300">Lissajous</span>
       </div>
     </div>
   );

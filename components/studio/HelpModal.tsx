@@ -36,7 +36,7 @@ function Section({
         </span>
         <h3 className="text-[11.5px] font-semibold text-white">{title}</h3>
       </div>
-      <div className="space-y-1.5 text-[9px] leading-relaxed text-ink-400">{children}</div>
+      <div className="space-y-1.5 text-[9px] leading-relaxed text-ink-300">{children}</div>
     </section>
   );
 }
@@ -67,7 +67,7 @@ export function HelpModal() {
       width="lg"
       footer={
         <div className="flex flex-wrap items-center justify-between gap-2">
-          <span className="text-[8px] text-ink-500">
+          <span className="text-[8px] text-ink-200">
             Atajos: Espacio · B · L · E · H · ?
           </span>
           <Button variant="secondary" size="sm" onClick={() => openHelp(false)}>
@@ -309,7 +309,7 @@ export function HelpModal() {
         </Section>
 
         {!track && (
-          <div className="rounded-xl border border-dashed border-white/[0.1] bg-white/[0.012] p-3 text-center text-[9px] text-ink-500">
+          <div className="rounded-xl border border-dashed border-white/[0.1] bg-white/[0.012] p-3 text-center text-[9px] text-ink-200">
             Carga una pista para activar la reproducción, los medidores y la exportación.
           </div>
         )}

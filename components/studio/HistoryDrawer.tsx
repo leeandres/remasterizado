@@ -112,8 +112,8 @@ export function HistoryDrawer() {
 
   const footer = (
     <div className="flex flex-wrap items-center justify-between gap-2">
-      <div className="flex items-center gap-2 text-[8px] text-ink-500">
-        <HardDrive size={10} className="text-ink-500" />
+      <div className="flex items-center gap-2 text-[8px] text-ink-200">
+        <HardDrive size={10} className="text-ink-200" />
         {storage ? (
           <span className="num">
             {formatBytes(storage.usage)} usados
@@ -122,7 +122,7 @@ export function HistoryDrawer() {
         ) : (
           <span>Almacenamiento local del navegador</span>
         )}
-        <span className="text-ink-700">·</span>
+        <span className="text-ink-300">·</span>
         <span>máx. 8 masters</span>
       </div>
       <div className="flex items-center gap-2">
@@ -155,15 +155,15 @@ export function HistoryDrawer() {
       {loading ? (
         <div className="flex flex-col items-center justify-center py-14">
           <Loader2 size={20} className="animate-spin text-lime-acid" />
-          <p className="mt-3 text-[10px] text-ink-500">Leyendo el historial…</p>
+          <p className="mt-3 text-[10px] text-ink-200">Leyendo el historial…</p>
         </div>
       ) : entries.length === 0 ? (
         <div className="flex flex-col items-center justify-center py-12 text-center">
           <div className="grid h-14 w-14 place-items-center rounded-2xl border border-white/[0.07] bg-white/[0.025]">
-            <History size={24} className="text-ink-500" strokeWidth={1.5} />
+            <History size={24} className="text-ink-200" strokeWidth={1.5} />
           </div>
           <h3 className="mt-3 text-[12px] font-semibold text-ink-200">Todavía no hay masters</h3>
-          <p className="mt-1 max-w-xs text-[9px] leading-relaxed text-ink-500">
+          <p className="mt-1 max-w-xs text-[9px] leading-relaxed text-ink-200">
             Cada exportación se guarda aquí con sus ajustes y el archivo final, listo para
             descargar de nuevo.
           </p>
@@ -198,11 +198,11 @@ export function HistoryDrawer() {
                       >
                         {entry.name.replace(/\.[^.]+$/, "")}
                       </h3>
-                      <span className="num shrink-0 text-[7.5px] text-ink-600">
+                      <span className="num shrink-0 text-[7.5px] text-ink-300">
                         {formatDate(entry.createdAt)}
                       </span>
                     </div>
-                    <div className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[8px] text-ink-500">
+                    <div className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[8px] text-ink-200">
                       <span className="inline-flex items-center gap-1">
                         <span
                           className="h-1 w-1 rounded-full"
@@ -210,19 +210,19 @@ export function HistoryDrawer() {
                         />
                         {platform.name}
                       </span>
-                      <span className="text-ink-700">·</span>
+                      <span className="text-ink-300">·</span>
                       <span>{genre.name}</span>
-                      <span className="text-ink-700">·</span>
+                      <span className="text-ink-300">·</span>
                       <span className="num">{formatTime(entry.duration)}</span>
-                      <span className="text-ink-700">·</span>
+                      <span className="text-ink-300">·</span>
                       <span className="num">{formatBytes(entry.bytes)}</span>
                     </div>
                     <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1">
                       <span className="num text-[10px] font-semibold text-white">
                         {formatLufs(entry.outputStats.lufsIntegrated)}
-                        <span className="ml-1 text-[7px] font-normal text-ink-500">LUFS</span>
+                        <span className="ml-1 text-[7px] font-normal text-ink-200">LUFS</span>
                       </span>
-                      <span className="num text-[8px] text-ink-400">
+                      <span className="num text-[8px] text-ink-300">
                         TP {entry.outputStats.truePeakDb <= -95 ? "—" : `${entry.outputStats.truePeakDb.toFixed(1)} dBTP`}
                       </span>
                       <span
@@ -252,7 +252,7 @@ export function HistoryDrawer() {
                   <button
                     type="button"
                     onClick={() => restore(entry)}
-                    className="focus-ring flex flex-1 items-center justify-center gap-1.5 py-2 text-[8.5px] text-ink-400 transition hover:bg-white/[0.035] hover:text-white"
+                    className="focus-ring flex flex-1 items-center justify-center gap-1.5 py-2 text-[8.5px] text-ink-300 transition hover:bg-white/[0.035] hover:text-white"
                   >
                     <RotateCcw size={10} />
                     Cargar ajustes
@@ -262,7 +262,7 @@ export function HistoryDrawer() {
                     type="button"
                     onClick={() => void remove(entry)}
                     disabled={busyId === entry.id}
-                    className="focus-ring flex w-10 items-center justify-center text-ink-600 transition hover:bg-danger/[0.06] hover:text-danger disabled:opacity-40"
+                    className="focus-ring flex w-10 items-center justify-center text-ink-300 transition hover:bg-danger/[0.06] hover:text-danger disabled:opacity-40"
                     aria-label={`Eliminar ${entry.fileName}`}
                   >
                     {busyId === entry.id ? (

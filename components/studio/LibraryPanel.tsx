@@ -71,7 +71,7 @@ function PresetSection() {
         <button
           type="button"
           onClick={resetSettings}
-          className="focus-ring inline-flex items-center gap-1 rounded px-1 py-0.5 text-[8px] text-ink-600 transition hover:text-ink-300"
+          className="focus-ring inline-flex items-center gap-1 rounded px-1 py-0.5 text-[8px] text-ink-300 transition hover:text-ink-300"
           title="Restablecer ajustes del preset"
         >
           <RefreshCcw size={9} />
@@ -104,7 +104,7 @@ function PresetSection() {
                 >
                   {item.name}
                 </span>
-                <span className="block truncate text-[8px] text-ink-600">{item.subtitle}</span>
+                <span className="block truncate text-[8px] text-ink-300">{item.subtitle}</span>
               </span>
               {active && (
                 <span
@@ -120,12 +120,12 @@ function PresetSection() {
       </div>
 
       <div className="border-t border-white/[0.05] px-3 py-2.5">
-        <p className="text-[9px] leading-relaxed text-ink-500">{profile.tagline}</p>
+        <p className="text-[9px] leading-relaxed text-ink-200">{profile.tagline}</p>
       </div>
 
       <div className="border-t border-white/[0.05] px-3 py-3">
         <div className="mb-2 flex items-center gap-1.5">
-          <Target size={10} className="text-ink-500" />
+          <Target size={10} className="text-ink-200" />
           <span className="label">Plataforma destino</span>
         </div>
         <div className="grid grid-cols-2 gap-1.5">
@@ -159,13 +159,13 @@ function PresetSection() {
                   <span
                     className={cn(
                       "truncate text-[9px] font-medium",
-                      active ? "text-white" : "text-ink-400",
+                      active ? "text-white" : "text-ink-300",
                     )}
                   >
                     {item.shortName}
                   </span>
                 </span>
-                <span className="num mt-0.5 text-[8px] text-ink-600">
+                <span className="num mt-0.5 text-[8px] text-ink-300">
                   {item.targetLUFS} LUFS
                 </span>
               </button>
@@ -173,7 +173,7 @@ function PresetSection() {
           })}
         </div>
         <div className="mt-2 flex items-center justify-between rounded-md border border-white/[0.05] bg-black/20 px-2 py-1.5">
-          <span className="text-[8px] uppercase tracking-wide text-ink-600">Objetivo</span>
+          <span className="text-[8px] uppercase tracking-wide text-ink-300">Objetivo</span>
           <span className="num text-[9px] font-medium text-ink-200">
             {formatLufs(settings.targetLUFS)} LUFS · {settings.limiter.ceiling.toFixed(1)} dBTP
           </span>
@@ -200,7 +200,7 @@ function PresetSection() {
                 Auto
               </span>
             </span>
-            <span className="mt-0.5 block text-[8px] leading-tight text-ink-400">
+            <span className="mt-0.5 block text-[8px] leading-tight text-ink-300">
               Analiza tu mezcla y ajusta la cadena completa
             </span>
           </span>
@@ -236,7 +236,7 @@ function SpectralBars({ spectral }: { spectral: SpectralBands }) {
                 }}
               />
             </div>
-            <span className="text-[6px] tracking-wide text-ink-600">{item.label}</span>
+            <span className="text-[6px] tracking-wide text-ink-300">{item.label}</span>
           </div>
         );
       })}
@@ -261,28 +261,28 @@ function SourceAnalysis() {
         <div className="px-3 py-3">
           <div className="grid grid-cols-2 gap-x-3 gap-y-2.5">
             <div>
-              <div className="text-[8px] uppercase tracking-wide text-ink-600">Integrated</div>
+              <div className="text-[8px] uppercase tracking-wide text-ink-300">Integrated</div>
               <div className="num mt-0.5 text-[15px] font-semibold text-white">
                 {formatLufs(track.stats.lufsIntegrated)}
-                <span className="ml-1 text-[8px] font-normal text-ink-600">LUFS</span>
+                <span className="ml-1 text-[8px] font-normal text-ink-300">LUFS</span>
               </div>
             </div>
             <div>
-              <div className="text-[8px] uppercase tracking-wide text-ink-600">True peak</div>
+              <div className="text-[8px] uppercase tracking-wide text-ink-300">True peak</div>
               <div className="num mt-0.5 text-[15px] font-semibold text-white">
                 {track.stats.truePeakDb.toFixed(1)}
-                <span className="ml-1 text-[8px] font-normal text-ink-600">dBTP</span>
+                <span className="ml-1 text-[8px] font-normal text-ink-300">dBTP</span>
               </div>
             </div>
             <div>
-              <div className="text-[8px] uppercase tracking-wide text-ink-600">LRA</div>
+              <div className="text-[8px] uppercase tracking-wide text-ink-300">LRA</div>
               <div className="num mt-0.5 text-[12px] font-medium text-ink-200">
                 {track.stats.lra.toFixed(1)}
-                <span className="ml-1 text-[8px] font-normal text-ink-600">LU</span>
+                <span className="ml-1 text-[8px] font-normal text-ink-300">LU</span>
               </div>
             </div>
             <div>
-              <div className="text-[8px] uppercase tracking-wide text-ink-600">Correlación</div>
+              <div className="text-[8px] uppercase tracking-wide text-ink-300">Correlación</div>
               <div
                 className={cn(
                   "num mt-0.5 text-[12px] font-medium",
@@ -299,7 +299,7 @@ function SourceAnalysis() {
             <SpectralBars spectral={track.stats.spectral} />
           </div>
 
-          <div className="mt-2 flex items-center justify-between text-[8px] text-ink-600">
+          <div className="mt-2 flex items-center justify-between text-[8px] text-ink-300">
             <span className="num">
               {formatTime(track.duration)} · {(track.sampleRate / 1000).toFixed(1)} kHz
             </span>
@@ -308,7 +308,7 @@ function SourceAnalysis() {
         </div>
       ) : (
         <div className="px-3 py-6 text-center">
-          <p className="text-[10px] text-ink-500">Carga una pista para ver el análisis</p>
+          <p className="text-[10px] text-ink-200">Carga una pista para ver el análisis</p>
         </div>
       )}
     </section>
@@ -324,7 +324,7 @@ export function LibraryPanel() {
     <div className="space-y-3">
       <div className="flex items-center justify-between px-1 lg:hidden">
         <h2 className="text-[13px] font-semibold text-white">Biblioteca & perfil</h2>
-        <span className="text-[9px] text-ink-500">
+        <span className="text-[9px] text-ink-200">
           {getGenre(genre).name} · {PLATFORMS[platform].shortName}
         </span>
       </div>
@@ -343,9 +343,9 @@ export function LibraryPanel() {
         </span>
         <span className="min-w-0 flex-1">
           <span className="block text-[10px] font-medium text-ink-200">Historial local</span>
-          <span className="block text-[8px] text-ink-600">Masterizaciones guardadas en este dispositivo</span>
+          <span className="block text-[8px] text-ink-300">Masterizaciones guardadas en este dispositivo</span>
         </span>
-        <span className="text-[9px] text-ink-600 transition group-hover:text-ink-300">Abrir →</span>
+        <span className="text-[9px] text-ink-300 transition group-hover:text-ink-300">Abrir →</span>
       </button>
     </div>
   );

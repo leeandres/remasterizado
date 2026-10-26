@@ -23,12 +23,12 @@ function MetricRow({
   const delta = after - before;
   return (
     <div className="grid grid-cols-[1fr_auto_auto_auto] items-center gap-3 border-t border-white/[0.04] px-1 py-1.5 first:border-t-0">
-      <span className="text-[8.5px] text-ink-500">{label}</span>
-      <span className="num text-right text-[9px] text-ink-400">
+      <span className="text-[8.5px] text-ink-200">{label}</span>
+      <span className="num text-right text-[9px] text-ink-300">
         {before <= -95 ? "—" : before.toFixed(1)}
-        <span className="ml-0.5 text-[7px] text-ink-600">{unit}</span>
+        <span className="ml-0.5 text-[7px] text-ink-300">{unit}</span>
       </span>
-      <span className="text-ink-700">→</span>
+      <span className="text-ink-300">→</span>
       <span
         className={cn(
           "num min-w-[62px] text-right text-[10px] font-semibold",
@@ -40,11 +40,11 @@ function MetricRow({
         )}
       >
         {after <= -95 ? "—" : after.toFixed(1)}
-        <span className="ml-0.5 text-[7px] font-normal text-ink-500">{unit}</span>
+        <span className="ml-0.5 text-[7px] font-normal text-ink-200">{unit}</span>
         <span
           className={cn(
             "ml-1.5 text-[7px] font-normal",
-            Math.abs(delta) < 0.05 ? "text-ink-700" : "text-ink-500",
+            Math.abs(delta) < 0.05 ? "text-ink-300" : "text-ink-200",
           )}
         >
           {Math.abs(delta) >= 0.05
@@ -80,7 +80,7 @@ export function StatsPanel() {
           </span>
           <div>
             <div className="text-[10.5px] font-semibold text-white">Original vs. master</div>
-            <div className="mt-0.5 text-[8px] text-ink-500">
+            <div className="mt-0.5 text-[8px] text-ink-200">
               Proyección del render final · objetivo {formatLufs(target)} LUFS
             </div>
           </div>
@@ -117,35 +117,35 @@ export function StatsPanel() {
           <div className="rounded-lg border border-white/[0.05] bg-black/20 px-2.5 py-2">
             <div className="mb-1 flex items-center justify-between">
               <span className="label !text-[8px]">Original</span>
-              <span className="num text-[8px] text-ink-500">EBU R128</span>
+              <span className="num text-[8px] text-ink-200">EBU R128</span>
             </div>
             <div className="grid grid-cols-2 gap-2">
               <div>
-                <div className="text-[7.5px] uppercase tracking-wide text-ink-600">Integrated</div>
+                <div className="text-[7.5px] uppercase tracking-wide text-ink-300">Integrated</div>
                 <div className="num mt-0.5 text-[16px] font-semibold text-white">
                   {formatLufs(before.lufsIntegrated)}
-                  <span className="ml-1 text-[7px] font-normal text-ink-600">LUFS</span>
+                  <span className="ml-1 text-[7px] font-normal text-ink-300">LUFS</span>
                 </div>
               </div>
               <div>
-                <div className="text-[7.5px] uppercase tracking-wide text-ink-600">True peak</div>
+                <div className="text-[7.5px] uppercase tracking-wide text-ink-300">True peak</div>
                 <div className="num mt-0.5 text-[16px] font-semibold text-white">
                   {before.truePeakDb <= -95 ? "—" : before.truePeakDb.toFixed(1)}
-                  <span className="ml-1 text-[7px] font-normal text-ink-600">dBTP</span>
+                  <span className="ml-1 text-[7px] font-normal text-ink-300">dBTP</span>
                 </div>
               </div>
             </div>
             <div className="mt-2 grid grid-cols-2 gap-2 border-t border-white/[0.04] pt-2">
               <div>
-                <div className="text-[7.5px] uppercase tracking-wide text-ink-600">LRA</div>
+                <div className="text-[7.5px] uppercase tracking-wide text-ink-300">LRA</div>
                 <div className="num mt-0.5 text-[10px] text-ink-200">
-                  {before.lra.toFixed(1)} <span className="text-[7px] text-ink-600">LU</span>
+                  {before.lra.toFixed(1)} <span className="text-[7px] text-ink-300">LU</span>
                 </div>
               </div>
               <div>
-                <div className="text-[7.5px] uppercase tracking-wide text-ink-600">Crest</div>
+                <div className="text-[7.5px] uppercase tracking-wide text-ink-300">Crest</div>
                 <div className="num mt-0.5 text-[10px] text-ink-200">
-                  {before.crestDb.toFixed(1)} <span className="text-[7px] text-ink-600">dB</span>
+                  {before.crestDb.toFixed(1)} <span className="text-[7px] text-ink-300">dB</span>
                 </div>
               </div>
             </div>
@@ -156,7 +156,7 @@ export function StatsPanel() {
               <Gauge size={12} className="text-lime-acid/70" />
               Proyección disponible
             </div>
-            <p className="mt-1 text-[8px] leading-relaxed text-ink-500">
+            <p className="mt-1 text-[8px] leading-relaxed text-ink-200">
               Analiza la cadena para renderizar offline, medir la sonoridad final y comprobar el
               cumplimiento de true peak antes de exportar.
             </p>
@@ -175,21 +175,21 @@ export function StatsPanel() {
         <div className="px-3 py-3">
           <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-2 rounded-xl border border-white/[0.055] bg-black/25 px-3 py-2.5">
             <div>
-              <div className="text-[7.5px] font-semibold uppercase tracking-[0.14em] text-ink-600">
+              <div className="text-[7.5px] font-semibold uppercase tracking-[0.14em] text-ink-300">
                 Original
               </div>
               <div className="mt-0.5 flex items-baseline gap-1">
                 <span className="num text-[24px] font-semibold leading-none text-ink-300">
                   {formatLufs(estimate.before.lufsIntegrated)}
                 </span>
-                <span className="text-[8px] text-ink-600">LUFS</span>
+                <span className="text-[8px] text-ink-300">LUFS</span>
               </div>
-              <div className="num mt-1 text-[8px] text-ink-500">
+              <div className="num mt-1 text-[8px] text-ink-200">
                 TP {estimate.before.truePeakDb <= -95 ? "—" : estimate.before.truePeakDb.toFixed(1)} dBTP
               </div>
             </div>
             <div className="flex flex-col items-center gap-1 px-1">
-              <ArrowRight size={14} className="text-ink-600" />
+              <ArrowRight size={14} className="text-ink-300" />
               <span className="num text-[7px] text-lime-acid/70">
                 {estimate.gainDb > 0 ? "+" : ""}
                 {estimate.gainDb.toFixed(1)} dB
@@ -203,7 +203,7 @@ export function StatsPanel() {
                 <span className="num text-[24px] font-semibold leading-none text-white">
                   {formatLufs(estimate.after.lufsIntegrated)}
                 </span>
-                <span className="text-[8px] text-ink-500">LUFS</span>
+                <span className="text-[8px] text-ink-200">LUFS</span>
               </div>
               <div
                 className={cn(
@@ -247,18 +247,18 @@ export function StatsPanel() {
             />
           </div>
 
-          <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-white/[0.04] pt-2 text-[7.5px] text-ink-600">
+          <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-white/[0.04] pt-2 text-[7.5px] text-ink-300">
             <span>
               Limitador:{" "}
-              <span className="num text-ink-400">
+              <span className="num text-ink-300">
                 −{estimate.limiterReductionDb.toFixed(1)} dB
               </span>
             </span>
-            <span className="text-ink-700">·</span>
+            <span className="text-ink-300">·</span>
             <span>
-              Render: <span className="num text-ink-400">{estimate.renderSeconds.toFixed(1)} s</span>
+              Render: <span className="num text-ink-300">{estimate.renderSeconds.toFixed(1)} s</span>
             </span>
-            <span className="text-ink-700">·</span>
+            <span className="text-ink-300">·</span>
             <span className="flex items-center gap-1">
               <span
                 className={cn(

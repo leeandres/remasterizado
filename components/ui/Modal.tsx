@@ -74,12 +74,12 @@ export function Modal({
         <header className="flex items-start justify-between gap-4 border-b border-white/[0.06] px-5 py-4 sm:px-6">
           <div className="min-w-0">
             <h2 className="truncate text-[15px] font-semibold tracking-tight text-white">{title}</h2>
-            {subtitle && <p className="mt-0.5 text-[11px] text-ink-400">{subtitle}</p>}
+            {subtitle && <p className="mt-0.5 text-[11px] text-ink-300">{subtitle}</p>}
           </div>
           <button
             type="button"
             onClick={onClose}
-            className="focus-ring -mr-1 grid h-8 w-8 shrink-0 place-items-center rounded-lg text-ink-400 transition hover:bg-white/[0.06] hover:text-white"
+            className="focus-ring -mr-1 grid h-8 w-8 shrink-0 place-items-center rounded-lg text-ink-300 transition hover:bg-white/[0.06] hover:text-white"
             aria-label="Cerrar diálogo"
           >
             <X size={16} />

@@ -76,8 +76,8 @@ export function BusyOverlay() {
               <Loader2 size={11} className="animate-spin text-lime-acid" />
               <h2 className="truncate text-[12px] font-semibold text-white">{busy.label}</h2>
             </div>
-            <p className="mt-1 text-[9px] leading-relaxed text-ink-400">{busy.detail}</p>
-            <div className="mt-2 flex items-center gap-1.5 text-[8px] text-ink-600">
+            <p className="mt-1 text-[9px] leading-relaxed text-ink-300">{busy.detail}</p>
+            <div className="mt-2 flex items-center gap-1.5 text-[8px] text-ink-300">
               <span className="rounded border border-white/[0.07] px-1 py-px uppercase tracking-wider">
                 {PHASE_LABELS[busy.phase] ?? busy.phase}
               </span>
@@ -92,9 +92,9 @@ export function BusyOverlay() {
           />
         </div>
 
-        <div className="mt-4 flex items-center justify-between gap-2 border-t border-white/[0.05] pt-3 text-[8px] text-ink-600">
+        <div className="mt-4 flex items-center justify-between gap-2 border-t border-white/[0.05] pt-3 text-[8px] text-ink-300">
           <span className="inline-flex items-center gap-1.5">
-            <Cpu size={10} className="text-ink-500" />
+            <Cpu size={10} className="text-ink-200" />
             Procesado local · sin subir archivos
           </span>
           <span className="inline-flex items-center gap-1.5">

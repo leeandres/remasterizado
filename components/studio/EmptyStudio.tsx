@@ -53,7 +53,7 @@ export function EmptyStudio() {
                 <Icon size={15} strokeWidth={1.8} />
               </div>
               <h3 className="mt-2.5 text-[11px] font-semibold text-ink-100">{feature.title}</h3>
-              <p className="mt-1 text-[9px] leading-relaxed text-ink-500">{feature.text}</p>
+              <p className="mt-1 text-[9px] leading-relaxed text-ink-200">{feature.text}</p>
             </div>
           );
         })}
@@ -65,7 +65,7 @@ export function EmptyStudio() {
             <Sparkles size={11} className="text-lime-acid/70" />
             <span className="label">Objetivos de entrega incluidos</span>
           </div>
-          <span className="inline-flex items-center gap-1 text-[8px] text-ink-500">
+          <span className="inline-flex items-center gap-1 text-[8px] text-ink-200">
             <ShieldCheck size={10} className="text-lime-acid/60" />
             Techo −1.0 dBTP
           </span>
@@ -85,19 +85,19 @@ export function EmptyStudio() {
               </div>
               <div className="num mt-1 text-[18px] font-semibold leading-none text-white">
                 {platform.targetLUFS}
-                <span className="ml-1 text-[8px] font-normal text-ink-500">LUFS</span>
+                <span className="ml-1 text-[8px] font-normal text-ink-200">LUFS</span>
               </div>
-              <p className="mt-1 text-[7.5px] text-ink-600">{platform.description}</p>
+              <p className="mt-1 text-[7.5px] text-ink-300">{platform.description}</p>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 px-2 py-1 text-[8.5px] text-ink-600">
+      <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 px-2 py-1 text-[8.5px] text-ink-300">
         <span>Procesado local en tu navegador</span>
-        <span className="text-ink-700">·</span>
+        <span className="text-ink-300">·</span>
         <span>Sin subir tu música a ningún servidor</span>
-        <span className="text-ink-700">·</span>
+        <span className="text-ink-300">·</span>
         <span>MP3 · WAV · FLAC</span>
       </div>
     </div>

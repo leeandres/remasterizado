@@ -51,7 +51,7 @@ export function Header() {
                 Pro
               </span>
             </div>
-            <div className="mt-1 hidden text-[8px] font-medium uppercase tracking-[0.22em] text-ink-500 sm:block">
+            <div className="mt-1 hidden text-[8px] font-medium uppercase tracking-[0.22em] text-ink-200 sm:block">
               AI Mastering Suite
             </div>
           </div>
@@ -67,7 +67,7 @@ export function Header() {
               style={{ background: platformInfo.color, boxShadow: `0 0 7px ${platformInfo.color}` }}
             />
             <span className="text-[10px] font-medium text-ink-200">{platformInfo.name}</span>
-            <span className="num text-[9px] text-ink-500">{target.toFixed(1)} LUFS</span>
+            <span className="num text-[9px] text-ink-200">{target.toFixed(1)} LUFS</span>
           </div>
         </div>
 
@@ -80,7 +80,7 @@ export function Header() {
               onClick={() => setBypass(true)}
               className={cn(
                 "focus-ring rounded-md px-2.5 py-1 text-[10px] font-semibold transition",
-                bypass ? "bg-amber-glow/90 text-[#1a1205]" : "text-ink-400 hover:text-white",
+                bypass ? "bg-amber-glow/90 text-[#1a1205]" : "text-ink-300 hover:text-white",
               )}
               title="Original (atajo: B)"
             >
@@ -91,7 +91,7 @@ export function Header() {
               onClick={() => setBypass(false)}
               className={cn(
                 "focus-ring rounded-md px-2.5 py-1 text-[10px] font-semibold transition",
-                !bypass ? "bg-lime-acid text-[#0a0c04]" : "text-ink-400 hover:text-white",
+                !bypass ? "bg-lime-acid text-[#0a0c04]" : "text-ink-300 hover:text-white",
               )}
               title="Masterizado (atajo: B)"
             >

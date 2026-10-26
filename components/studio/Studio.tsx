@@ -122,38 +122,38 @@ export default function Studio() {
               <EmptyStudio />
             )}
 
-            <div className="hidden items-center justify-center gap-4 px-2 py-1 text-[8px] text-ink-700 lg:flex">
+            <div className="hidden items-center justify-center gap-4 px-2 py-1 text-[8px] text-ink-300 lg:flex">
               <span className="inline-flex items-center gap-1.5">
                 <Keyboard size={10} />
                 Atajos
               </span>
               <span>
-                <kbd className="rounded border border-white/[0.07] bg-white/[0.03] px-1 py-px text-ink-500">
+                <kbd className="rounded border border-white/[0.07] bg-white/[0.03] px-1 py-px text-ink-200">
                   Espacio
                 </kbd>{" "}
                 play/pausa
               </span>
               <span>
-                <kbd className="rounded border border-white/[0.07] bg-white/[0.03] px-1 py-px text-ink-500">
+                <kbd className="rounded border border-white/[0.07] bg-white/[0.03] px-1 py-px text-ink-200">
                   B
                 </kbd>{" "}
                 A/B
               </span>
               <span>
-                <kbd className="rounded border border-white/[0.07] bg-white/[0.03] px-1 py-px text-ink-500">
+                <kbd className="rounded border border-white/[0.07] bg-white/[0.03] px-1 py-px text-ink-200">
                   L
                 </kbd>{" "}
                 loop
               </span>
               <span>
-                <kbd className="rounded border border-white/[0.07] bg-white/[0.03] px-1 py-px text-ink-500">
+                <kbd className="rounded border border-white/[0.07] bg-white/[0.03] px-1 py-px text-ink-200">
                   E
                 </kbd>{" "}
                 exportar
               </span>
             </div>
 
-            <div className="flex items-center justify-center gap-1.5 pb-2 pt-1 text-[8px] text-ink-700 lg:hidden">
+            <div className="flex items-center justify-center gap-1.5 pb-2 pt-1 text-[8px] text-ink-300 lg:hidden">
               <Sparkles size={9} className="text-lime-acid/40" />
               MasterAI Pro · procesado local
             </div>

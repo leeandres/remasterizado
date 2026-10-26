@@ -141,7 +141,7 @@ export function Knob({
           <span className="num text-[10px] font-semibold text-ink-100">{display}</span>
         </span>
       </button>
-      <span className="select-none text-[9px] uppercase tracking-[0.08em] text-ink-400">
+      <span className="select-none text-[9px] uppercase tracking-[0.08em] text-ink-300">
         {label}
       </span>
     </div>

@@ -46,13 +46,13 @@ export function ToastHost() {
         <div className="min-w-0 flex-1">
           <p className="text-[12px] font-semibold text-white">{toast.title}</p>
           {toast.message && (
-            <p className="mt-0.5 text-[11px] leading-relaxed text-ink-400">{toast.message}</p>
+            <p className="mt-0.5 text-[11px] leading-relaxed text-ink-300">{toast.message}</p>
           )}
         </div>
         <button
           type="button"
           onClick={dismiss}
-          className="focus-ring mt-0.5 text-ink-400 transition hover:text-white"
+          className="focus-ring mt-0.5 text-ink-300 transition hover:text-white"
           aria-label="Cerrar aviso"
         >
           <X size={14} />
