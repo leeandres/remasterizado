@@ -1,0 +1,32 @@
+{
+  "name": "masterai-pro",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MasterAI Pro — AI-assisted audio mastering studio in the browser",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@breezystack/lamejs": "1.2.7",
+    "@wasm-audio-decoders/flac": "0.2.11",
+    "chart.js": "4.6.1",
+    "idb": "8.0.4",
+    "lucide-react": "1.61.0",
+    "next": "16.4.3",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "wavesurfer.js": "7.12.12",
+    "zustand": "5.0.16"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "24.10.1",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "tailwindcss": "4.3.3",
+    "typescript": "5.9.3"
+  }
+}
