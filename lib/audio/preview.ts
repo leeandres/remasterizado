@@ -242,7 +242,13 @@ export class PreviewEngine {
       return;
     }
 
-    const start = clamp(from ?? this.offset, 0, Math.max(0, this.duration - 0.001));
+    const baseOffset =
+      typeof from === "number"
+        ? from
+        : this.offset >= this.duration - 0.001
+          ? 0
+          : this.offset;
+    const start = clamp(baseOffset, 0, Math.max(0, this.duration - 0.001));
     this.startSource(start);
   }
 

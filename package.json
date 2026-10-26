@@ -2,12 +2,16 @@
   "name": "masterai-pro",
   "version": "1.0.0",
   "private": true,
-  "description": "MasterAI Pro — AI-assisted audio mastering studio in the browser",
+  "description": "MasterAI Pro \u2014 AI-assisted audio mastering studio in the browser",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "electron:dev": "electron .",
+    "electron:build": "npm run build && node scripts/copy-standalone.js && electron-builder",
+    "electron:build:mac": "npm run build && node scripts/copy-standalone.js && electron-builder --mac",
+    "electron:build:win": "npm run build && node scripts/copy-standalone.js && electron-builder --win"
   },
   "dependencies": {
     "@breezystack/lamejs": "1.2.7",
@@ -26,7 +30,44 @@
     "@types/node": "24.10.1",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
+    "electron": "^33.4.11",
+    "electron-builder": "^25.1.8",
     "tailwindcss": "4.3.3",
     "typescript": "5.9.3"
+  },
+  "main": "electron/main.js",
+  "build": {
+    "appId": "com.masterai.pro",
+    "productName": "MasterAI Pro",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "electron/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": ".next/standalone",
+        "to": "standalone"
+      }
+    ],
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "category": "public.app-category.music"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "zip"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ]
+    }
   }
 }
